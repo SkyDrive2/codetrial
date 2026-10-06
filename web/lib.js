@@ -13,6 +13,18 @@ export function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (char) => HTML_ESCAPES[char]);
 }
 
+export function languageLabel(value) {
+  return (
+    {
+      cpp: "C++",
+      c: "C",
+      java: "Java",
+      javascript: "JavaScript",
+      python: "Python",
+    }[value] || value
+  );
+}
+
 export function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
